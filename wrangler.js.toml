@@ -1,9 +1,0 @@
-name = "worker-rs-alarm"
-
-[[durable_objects.bindings]]
-name = "Do"
-class_name = "AlarmWK_JS"
-
-[[migrations]]
-tag = "v1"
-new_classes = ["AlarmWK_JS"]
