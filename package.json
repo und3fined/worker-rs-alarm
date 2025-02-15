@@ -1,0 +1,16 @@
+{
+  "name": "worker-rs-alarm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wrangler:dev": "wrangler dev --test-scheduled --port 8877"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wrangler": "3.107.3"
+  }
+}
