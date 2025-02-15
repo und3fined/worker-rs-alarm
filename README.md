@@ -2,10 +2,6 @@
 
 Prototype test worker alarm.
 
-### NOT WORK
-
-No any trigger to `alarm` fn.
-
 ### Rust requirements
 
 - Version 1.85.0 or later.

@@ -22,7 +22,7 @@ pub async fn register(evt: &ScheduledEvent, env: &Env) -> anyhow::Result<()> {
 
             let alarm = super::model::Alarm {
                 id: alarm_id.to_string(),
-                alert_time: current_time + 20,
+                alert_time: current_time + 5,
                 created_at: current_time,
             };
 

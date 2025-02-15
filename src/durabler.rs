@@ -35,15 +35,17 @@ impl DurableObject for AlarmWKRS {
 
                 if prev_alarm.is_none() {
                     let dt = DateTime::from_timestamp(data.alert_time, 0).unwrap();
-                    let scheduled_time = ScheduledTime::from(dt.timestamp_millis());
+                    let scheduled_time = ScheduledTime::from(dt);
 
                     let mut opts = SetAlarmOptions::default();
                     opts.allow_unconfirmed = Some(true);
 
+                    storage.put("alarm", data.id).await.unwrap();
+
                     state.wait_until(async move {
-                        match storage.set_alarm_with_options(scheduled_time, opts).await {
-                            Ok(_) => console_log!("set_alarm_with_options: OK"),
-                            Err(e) => console_log!("set_alarm_with_options: {:?}", e),
+                        match storage.set_alarm(scheduled_time).await {
+                            Ok(_) => console_log!("set_alarm: OK"),
+                            Err(e) => console_log!("set_alarm: {:?}", e),
                         };
                     });
 
